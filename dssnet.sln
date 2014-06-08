@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dss-service", "dss-service\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dss-spi", "dss-spi\dss-spi.csproj", "{29388317-681F-4C0C-961D-C8E0C6151447}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{270E93BD-E849-405B-9E92-8783895BC139}"
+	ProjectSection(SolutionItems) = preProject
+		DSS3-T1-CookBook-v1.05.doc = DSS3-T1-CookBook-v1.05.doc
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
