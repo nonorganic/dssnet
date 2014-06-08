@@ -36,3 +36,6 @@ https://github.com/mono/ngit
 - Implement XAdES verification.
 - Integrate PAdES signature and verification.
 - Port Microsoft.Xades to Mono.
+
+###Disclaimer
+I am not affiliated in any way with the European Commission nor the original DSS project. This is an independent port to C#.
