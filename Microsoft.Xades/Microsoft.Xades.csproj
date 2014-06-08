@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30128</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE1DC57A-344A-4B0A-82CE-5FD328C14894}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>Microsoft.Xades</AssemblyName>
+    <AssemblyOriginatorKeyFile>Microsoft.Xades.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Xades</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <DocumentationFile>doc\XAdES.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn />
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Security">
+      <Name>System.Security</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AllDataObjectsTimeStampCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cert.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CertCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CertificateValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CertifiedRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CertifiedRoleCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CertifiedRoles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CertRefs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimedRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimedRoleCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimedRoles.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommitmentTypeIndication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommitmentTypeIndicationCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommitmentTypeQualifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommitmentTypeQualifierCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CommitmentTypeQualifiers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompleteCertificateRefs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompleteRevocationRefs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CanonicalizationMethod.cs" />
+    <Compile Include="CounterSignatureCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRLIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRLRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRLRefCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRLRefs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRLValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRLValueCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CRLValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataObjectFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataObjectFormatCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DigestAlgAndValueType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DigestMethod.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentationReference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentationReferenceCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DocumentationReferences.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EncapsulatedPKIData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EncapsulatedX509Certificate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EncapsulatedX509CertificateCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HashDataInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HashDataInfoCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Identifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndividualDataObjectsTimeStampCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IssuerSerial.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NoticeNumberCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NoticeNumbers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NoticeRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectReference.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ObjectReferenceCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCSPIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCSPRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCSPRefCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCSPRefs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCSPValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCSPValueCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCSPValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherCertificate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherCertificateCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherRef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherRefCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherRefs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherValue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherValueCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OtherValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QualifyingProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RevocationValues.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignaturePolicyId.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignaturePolicyIdentifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignatureProductionPlace.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignatureTimeStampCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignedDataObjectProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignedProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignedSignatureProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SignerRole.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SigningCertificate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SigPolicyQualifier.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SigPolicyQualifierCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SigPolicyQualifiers.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPUri.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPUserNotice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeStamp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transform.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransformCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transforms.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnsignedDataObjectProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnsignedDataObjectProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnsignedDataObjectPropertyCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnsignedProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UnsignedSignatureProperties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XadesObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XadesSignedXml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XMLTimeStamp.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="XAdES.xsd" />
+    <EmbeddedResource Include="xmldsig-core-schema.xsd" />
+    <None Include="Microsoft.Xades.snk" />
+    <None Include="XAdES.xsx">
+      <DependentUpon>XAdES.xsd</DependentUpon>
+    </None>
+    <None Include="xmldsig-core-schema.xsx">
+      <DependentUpon>xmldsig-core-schema.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+</Project>

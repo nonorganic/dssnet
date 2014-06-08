@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66FC8986-C87C-4A2B-92D7-BF50AC8D8C94}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dss_document</RootNamespace>
+    <AssemblyName>dss-document</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signature\Cades\CAdESProfileA.cs" />
+    <Compile Include="Signature\Cades\CAdESProfileBES.cs" />
+    <Compile Include="Signature\Cades\CAdESProfileC.cs" />
+    <Compile Include="Signature\Cades\CAdESProfileEPES.cs" />
+    <Compile Include="Signature\Cades\CAdESProfileT.cs" />
+    <Compile Include="Signature\Cades\CAdESProfileX.cs" />
+    <Compile Include="Signature\Cades\CAdESProfileXL.cs" />
+    <Compile Include="Signature\Cades\CAdESService.cs" />
+    <Compile Include="Signature\Cades\CAdESSignatureExtension.cs" />
+    <Compile Include="Signature\Cades\CMSSignedDocument.cs" />
+    <Compile Include="Signature\Cades\PreComputedContentSigner.cs" />
+    <Compile Include="Signature\Document.cs" />
+    <Compile Include="Signature\DocumentSignatureService.cs" />
+    <Compile Include="Signature\FileDocument.cs" />
+    <Compile Include="Signature\InMemoryDocument.cs" />
+    <Compile Include="Signature\MimeType.cs" />
+    <Compile Include="Signature\ProfileException.cs" />
+    <Compile Include="Signature\Provider\SignatureInterceptor.cs" />
+    <Compile Include="Signature\Provider\SignatureInterceptorProvider.cs" />
+    <Compile Include="Signature\Provider\SpecialPrivateKey.cs" />
+    <Compile Include="Signature\SignatureEvent.cs" />
+    <Compile Include="Signature\SignatureEventDelegate.cs" />
+    <Compile Include="Signature\SignatureEventListener.cs" />
+    <Compile Include="Signature\SignatureEventType.cs" />
+    <Compile Include="Signature\SignatureExtension.cs" />
+    <Compile Include="Signature\SignatureFormat.cs" />
+    <Compile Include="Signature\SignaturePackaging.cs" />
+    <Compile Include="Signature\SignatureParameters.cs" />
+    <Compile Include="Signature\SignaturePolicy.cs" />
+    <Compile Include="Signature\SignatureProfile.cs" />
+    <Compile Include="Signature\Xades\OneExternalFileURIDereferencer.cs" />
+    <Compile Include="Signature\Xades\OnlineOcspSource.cs" />
+    <Compile Include="Signature\Xades\XAdESProfileA.cs" />
+    <Compile Include="Signature\Xades\XAdESProfileBES.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Signature\Xades\XAdESProfileC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Signature\Xades\XAdESProfileEPES.cs" />
+    <Compile Include="Signature\Xades\XAdESProfileT.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Signature\Xades\XAdESProfileX.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Signature\Xades\XAdESProfileXL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Signature\Xades\XAdESService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Signature\Xades\XmlDsigEnvelopedSignatureTransform.cs" />
+    <Compile Include="Signature\Xades\XMLUtils.cs" />
+    <Compile Include="Validation\Ades\SignatureCertificateSource.cs" />
+    <Compile Include="Validation\Ades\SignatureCRLSource.cs" />
+    <Compile Include="Validation\Ades\SignatureOCSPSource.cs" />
+    <Compile Include="Validation\AdvancedSignature.cs" />
+    <Compile Include="Validation\Cades\CAdESCertificateSource.cs" />
+    <Compile Include="Validation\Cades\CAdESCRLSource.cs" />
+    <Compile Include="Validation\Cades\CAdESOCSPSource.cs" />
+    <Compile Include="Validation\Cades\CAdESSignature.cs" />
+    <Compile Include="Validation\Cades\CMSDocumentValidator.cs" />
+    <Compile Include="Validation\CertificateRef.cs" />
+    <Compile Include="Validation\CertificateStatus.cs" />
+    <Compile Include="Validation\CertificateStatusVerifier.cs" />
+    <Compile Include="Validation\CertificateValidity.cs" />
+    <Compile Include="Validation\CertificateVerifier.cs" />
+    <Compile Include="Validation\CRLRef.cs" />
+    <Compile Include="Validation\Crl\CRLCertificateVerifier.cs" />
+    <Compile Include="Validation\OCSPAndCRLCertificateVerifier.cs" />
+    <Compile Include="Validation\OCSPRef.cs" />
+    <Compile Include="Validation\Ocsp\OCSPCertificateVerifier.cs" />
+    <Compile Include="Validation\Ocsp\OCSPUtils.cs" />
+    <Compile Include="Validation\PolicyValue.cs" />
+    <Compile Include="Validation\Report\CertificateVerification.cs" />
+    <Compile Include="Validation\Report\CertPathRevocationAnalysis.cs" />
+    <Compile Include="Validation\Report\QCStatementInformation.cs" />
+    <Compile Include="Validation\Report\QualificationsVerification.cs" />
+    <Compile Include="Validation\Report\Result.cs" />
+    <Compile Include="Validation\Report\RevocationVerificationResult.cs" />
+    <Compile Include="Validation\Report\SignatureInformation.cs" />
+    <Compile Include="Validation\Report\SignatureLevel.cs" />
+    <Compile Include="Validation\Report\SignatureLevelA.cs" />
+    <Compile Include="Validation\Report\SignatureLevelAnalysis.cs" />
+    <Compile Include="Validation\Report\SignatureLevelBES.cs" />
+    <Compile Include="Validation\Report\SignatureLevelC.cs" />
+    <Compile Include="Validation\Report\SignatureLevelEPES.cs" />
+    <Compile Include="Validation\Report\SignatureLevelLTV.cs" />
+    <Compile Include="Validation\Report\SignatureLevelT.cs" />
+    <Compile Include="Validation\Report\SignatureLevelX.cs" />
+    <Compile Include="Validation\Report\SignatureLevelXL.cs" />
+    <Compile Include="Validation\Report\SignatureVerification.cs" />
+    <Compile Include="Validation\Report\TimeInformation.cs" />
+    <Compile Include="Validation\Report\TimestampVerificationResult.cs" />
+    <Compile Include="Validation\Report\TrustedListInformation.cs" />
+    <Compile Include="Validation\Report\ValidationReport.cs" />
+    <Compile Include="Validation\SignatureFormat.cs" />
+    <Compile Include="Validation\SignedDocumentValidator.cs" />
+    <Compile Include="Validation\TrustedListCertificateVerifier.cs" />
+    <Compile Include="Validation\ValidationContext.cs" />
+    <Compile Include="Validation\ValidatorSourceType.cs" />
+    <Compile Include="Validation\X509\CertificateToken.cs" />
+    <Compile Include="Validation\X509\CRLToken.cs" />
+    <Compile Include="Validation\X509\OCSPRespToken.cs" />
+    <Compile Include="Validation\X509\RevocationData.cs" />
+    <Compile Include="Validation\X509\SignedToken.cs" />
+    <Compile Include="Validation\X509\TimestampToken.cs" />
+    <Compile Include="Validation\Xades\XAdESCertificateSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Validation\Xades\XAdESCRLSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Validation\Xades\XAdESOCSPSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Validation\Xades\XAdESSignature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Validation\Xades\XMLDocumentValidator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\dss-spi\dss-spi.csproj">
+      <Project>{29388317-681f-4c0c-961d-c8e0c6151447}</Project>
+      <Name>dss-spi</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iText\itextsharp.csproj">
+      <Project>{84c4fdd9-3ed7-453b-b9da-b3ed52cb071c}</Project>
+      <Name>itextsharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Microsoft.Xades\Microsoft.Xades.csproj">
+      <Project>{ee1dc57a-344a-4b0a-82ce-5fd328c14894}</Project>
+      <Name>Microsoft.Xades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sharpen\Sharpen.csproj">
+      <Project>{72944a6c-45ff-4ef8-b349-8c9cabf519d4}</Project>
+      <Name>Sharpen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

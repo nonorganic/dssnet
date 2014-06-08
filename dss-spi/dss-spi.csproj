@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29388317-681F-4C0C-961D-C8E0C6151447}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>dss_spi</RootNamespace>
+    <AssemblyName>dss-spi</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BadPasswordException.cs" />
+    <Compile Include="CannotFetchDataException.cs" />
+    <Compile Include="ConfigurationException.cs" />
+    <Compile Include="Digest.cs" />
+    <Compile Include="DigestAlgorithm.cs" />
+    <Compile Include="EncodingException.cs" />
+    <Compile Include="NotETSICompliantException.cs" />
+    <Compile Include="NullPrivateKey.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignatureAlgorithm.cs" />
+    <Compile Include="Signature\Token\AsyncSignatureTokenConnection.cs" />
+    <Compile Include="Signature\Token\Constants.cs" />
+    <Compile Include="Signature\Token\IDssPrivateKeyEntry.cs" />
+    <Compile Include="Signature\Token\KSPrivateKeyEntry.cs" />
+    <Compile Include="Signature\Token\KSX509Certificate2Entry.cs" />
+    <Compile Include="Signature\Token\MSCAPISignatureToken.cs" />
+    <Compile Include="Signature\Token\PasswordInputCallback.cs" />
+    <Compile Include="Signature\Token\Pkcs11SignatureToken.cs" />
+    <Compile Include="Signature\Token\Pkcs12SignatureToken.cs" />
+    <Compile Include="Signature\Token\PrefilledPasswordCallback.cs" />
+    <Compile Include="Signature\Token\RFC3370Pkcs11SignatureToken.cs" />
+    <Compile Include="Signature\Token\RFC3370Pkcs12SignatureToken.cs" />
+    <Compile Include="Signature\Token\SignatureTokenConnection.cs" />
+    <Compile Include="Validation\Certificate\CertificateAndContext.cs" />
+    <Compile Include="Validation\Certificate\CertificateSource.cs" />
+    <Compile Include="Validation\Certificate\CertificateSourceFactory.cs" />
+    <Compile Include="Validation\Certificate\CertificateSourceType.cs" />
+    <Compile Include="Validation\Certificate\CompositeCertificateSource.cs" />
+    <Compile Include="Validation\Certificate\KeyStoreCertificateSource.cs" />
+    <Compile Include="Validation\Certificate\ListCertificateSource.cs" />
+    <Compile Include="Validation\Certificate\OCSPRespCertificateSource.cs" />
+    <Compile Include="Validation\Certificate\OfflineCertificateSource.cs" />
+    <Compile Include="Validation\Crl\ICrlSource.cs" />
+    <Compile Include="Validation\Crl\ListCRLSource.cs" />
+    <Compile Include="Validation\Crl\OfflineCRLSource.cs" />
+    <Compile Include="Validation\Https\HTTPDataLoader.cs" />
+    <Compile Include="Validation\Ocsp\ListOCSPSource.cs" />
+    <Compile Include="Validation\Ocsp\IOcspSource.cs" />
+    <Compile Include="Validation\Ocsp\OfflineOCSPSource.cs" />
+    <Compile Include="Validation\Tsl\CompositeCriteriaList.cs" />
+    <Compile Include="Validation\Tsl\Condition.cs" />
+    <Compile Include="Validation\Tsl\KeyUsageCondition.cs" />
+    <Compile Include="Validation\Tsl\PolicyIdCondition.cs" />
+    <Compile Include="Validation\Tsl\QcStatementCondition.cs" />
+    <Compile Include="Validation\Tsl\QualificationElement.cs" />
+    <Compile Include="Validation\Tsl\ServiceInfo.cs" />
+    <Compile Include="Validation\Tsp\ITspSource.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iText\itextsharp.csproj">
+      <Project>{84c4fdd9-3ed7-453b-b9da-b3ed52cb071c}</Project>
+      <Name>itextsharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sharpen\Sharpen.csproj">
+      <Project>{72944a6c-45ff-4ef8-b349-8c9cabf519d4}</Project>
+      <Name>Sharpen</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

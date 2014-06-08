@@ -1,0 +1,3765 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Xades</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Xades.AllDataObjectsTimeStampCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.AllDataObjectsTimeStampCollection.Add(Microsoft.Xades.TimeStamp)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.AllDataObjectsTimeStampCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.AllDataObjectsTimeStampCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.Cert">
+            <summary>
+            This class contains certificate identification information
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Cert.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Cert.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.Cert.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.Cert.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.Cert.CertDigest">
+            <summary>
+            The element CertDigest contains the digest of one of the
+            certificates referenced in the sequence
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.Cert.IssuerSerial">
+            <summary>
+            The element IssuerSerial contains the identifier of one of the
+            certificates referenced in the sequence. Should the
+            X509IssuerSerial element appear in the signature to denote the same
+            certificate, its value MUST be consistent with the corresponding
+            IssuerSerial element.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CertCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertCollection.Add(Microsoft.Xades.Cert)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CertCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CertCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.CertificateValues">
+            <summary>
+            The CertificateValues element contains the full set of certificates
+            that have been used to validate	the electronic signature, including the
+            signer's certificate. However, it is not necessary to include one of
+            those certificates into this property, if the certificate is already
+            present in the ds:KeyInfo element of the signature.
+            In fact, both the signer certificate (referenced in the mandatory
+            SigningCertificate property element) and all certificates referenced in
+            the CompleteCertificateRefs property element must be present either in
+            the ds:KeyInfo element of the signature or in the CertificateValues
+            property element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertificateValues.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertificateValues.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CertificateValues.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CertificateValues.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CertificateValues.Id">
+            <summary>
+            Optional Id of the certificate values element
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CertificateValues.EncapsulatedX509CertificateCollection">
+            <summary>
+            A collection of encapsulated X509 certificates
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CertificateValues.OtherCertificateCollection">
+            <summary>
+            Collection of other certificates
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CertifiedRole">
+            <summary>
+            The CertifiedRoles element contains one or more wrapped attribute
+            certificates for the signer
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.EncapsulatedPKIData">
+            <summary>
+            EncapsulatedPKIData is used to incorporate a piece of PKI data
+            into an XML structure whereas the PKI data is encoded using an ASN.1
+            encoding mechanism. Examples of such PKI data that are widely used at
+            the time include X509 certificates and revocation lists, OCSP responses,
+            attribute certificates and time-stamps.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedPKIData.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedPKIData.#ctor(System.String)">
+            <summary>
+            Constructor with TagName
+            </summary>
+            <param name="tagName">Name of the tag when serializing with GetXml</param>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedPKIData.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedPKIData.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedPKIData.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.EncapsulatedPKIData.TagName">
+            <summary>
+            The name of the element when serializing
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.EncapsulatedPKIData.Id">
+            <summary>
+            The optional ID attribute can be used to make a reference to an element
+            of this data type.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.EncapsulatedPKIData.PkiData">
+            <summary>
+            Base64 encoded content of this data type 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertifiedRole.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CertifiedRoleCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertifiedRoleCollection.Add(Microsoft.Xades.CertifiedRole)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CertifiedRoleCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CertifiedRoleCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.CertifiedRoles">
+            <summary>
+            The CertifiedRoles element contains one or more wrapped attribute
+            certificates for the signer
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertifiedRoles.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertifiedRoles.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CertifiedRoles.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CertifiedRoles.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CertifiedRoles.CertifiedRoleCollection">
+            <summary>
+            Collection of certified roles
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CertRefs">
+            <summary>
+            The CertRefs element contains a collection of Cert elements
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertRefs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CertRefs.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CertRefs.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CertRefs.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CertRefs.CertCollection">
+            <summary>
+            Collection of Certs
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.ClaimedRole">
+            <summary>
+            This class contains a roles claimed by the signer but not it is not a
+            certified role
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRole.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRole.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRole.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRole.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.ClaimedRole.AnyXmlElement">
+            <summary>
+            The generic XML element that represents a claimed role
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.ClaimedRoleCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRoleCollection.Add(Microsoft.Xades.ClaimedRole)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRoleCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.ClaimedRoleCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.ClaimedRoles">
+            <summary>
+            The ClaimedRoles element contains a sequence of roles claimed by
+            the signer but not certified. Additional contents types may be
+            defined on a domain application basis and be part of this element.
+            The namespaces given to the corresponding XML schemas will allow
+            their unambiguous identification in the case these roles use XML.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRoles.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRoles.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRoles.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.ClaimedRoles.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.ClaimedRoles.ClaimedRoleCollection">
+            <summary>
+            Collection of claimed roles
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CommitmentTypeIndication">
+            <summary>
+            The commitment type can be indicated in the electronic signature
+            by either explicitly using a commitment type indication in the
+            electronic signature or implicitly or explicitly from the semantics
+            of the signed data object.
+            If the indicated commitment type is explicit by means of a commitment
+            type indication in the electronic signature, acceptance of a verified
+            signature implies acceptance of the semantics of that commitment type.
+            The semantics of explicit commitment types indications shall be
+            specified either as part of the signature policy or may be registered
+            for	generic use across multiple policies.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeIndication.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeIndication.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeIndication.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeIndication.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeIndication.CommitmentTypeId">
+            <summary>
+            The CommitmentTypeId element univocally identifies the type of commitment made by the signer.
+            A number of commitments have been already identified and assigned corresponding OIDs.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeIndication.ObjectReferenceCollection">
+            <summary>
+            Collection of object references
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeIndication.AllSignedDataObjects">
+            <summary>
+            If all the signed data objects share the same commitment, the
+            AllSignedDataObjects empty element MUST be present.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeIndication.CommitmentTypeQualifiers">
+            <summary>
+            The CommitmentTypeQualifiers element provides means to include additional
+            qualifying information on the commitment made by the signer.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CommitmentTypeIndicationCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeIndicationCollection.Add(Microsoft.Xades.CommitmentTypeIndication)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeIndicationCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeIndicationCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.CommitmentTypeQualifier">
+            <summary>
+            The CommitmentTypeQualifiers element provides means to include
+            additional qualifying information on the commitment made by the signer
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifier.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifier.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifier.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifier.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeQualifier.AnyXmlElement">
+            <summary>
+            The generic XML element that represents a commitment type qualifier
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CommitmentTypeQualifierCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifierCollection.Add(Microsoft.Xades.CommitmentTypeQualifier)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifierCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeQualifierCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.CommitmentTypeQualifiers">
+            <summary>
+            The CommitmentTypeQualifier element provides means to include
+            additional qualifying information on the commitment made by the signer
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifiers.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifiers.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifiers.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CommitmentTypeQualifiers.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CommitmentTypeQualifiers.CommitmentTypeQualifierCollection">
+            <summary>
+            Collection of commitment type qualifiers
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CompleteCertificateRefs">
+            <summary>
+            This clause defines the XML element containing the sequence of
+            references to the full set of CA certificates that have been used
+            to validate the electronic signature up to (but not including) the
+            signer's certificate. This is an unsigned property that qualifies
+            the signature.
+            An XML electronic signature aligned with the XAdES standard may
+            contain at most one CompleteCertificateRefs element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteCertificateRefs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteCertificateRefs.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteCertificateRefs.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteCertificateRefs.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CompleteCertificateRefs.Id">
+            <summary>
+            The optional Id attribute can be used to make a reference to the CompleteCertificateRefs element
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CompleteCertificateRefs.CertRefs">
+            <summary>
+            The CertRefs element contains a sequence of Cert elements, incorporating the
+            digest of each certificate and optionally the issuer and serial number identifier.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CompleteRevocationRefs">
+            <summary>
+            This clause defines the XML element containing a full set of
+            references to the revocation data that have been used in the
+            validation of the signer and CA certificates.
+            This is an unsigned property that qualifies the signature.
+            The XML electronic signature aligned with the present document
+            MAY contain at most one CompleteRevocationRefs element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteRevocationRefs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteRevocationRefs.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteRevocationRefs.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CompleteRevocationRefs.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CompleteRevocationRefs.Id">
+            <summary>
+            The optional Id attribute can be used to make a reference to the CompleteRevocationRefs element
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CompleteRevocationRefs.CRLRefs">
+            <summary>
+            Sequences of references to CRLs
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CompleteRevocationRefs.OCSPRefs">
+            <summary>
+            Sequences of references to OCSP responses
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CompleteRevocationRefs.OtherRefs">
+            <summary>
+            Other references to alternative forms of revocation data
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CanonicalizationMethod">
+            <summary>
+            DigestMethod indicates the digest algorithm
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CanonicalizationMethod.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CanonicalizationMethod.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CanonicalizationMethod.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CanonicalizationMethod.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CanonicalizationMethod.Algorithm">
+            <summary>
+            Contains the digest algorithm
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CounterSignatureCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CounterSignatureCollection.Add(Microsoft.Xades.XadesSignedXml)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CounterSignatureCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CounterSignatureCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.CRLIdentifier">
+            <summary>
+            This class includes the issuer (Issuer element), the time when the CRL
+            was issued (IssueTime element) and optionally the number of the CRL
+            (Number element).
+            The Identifier element can be dropped if the CRL could be inferred from
+            other information. Its URI attribute could serve to	indicate where the
+            identified CRL is archived.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLIdentifier.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLIdentifier.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CRLIdentifier.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CRLIdentifier.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CRLIdentifier.UriAttribute">
+            <summary>
+            The optional URI attribute could serve to indicate where the OCSP
+            response identified is archived.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CRLIdentifier.Issuer">
+            <summary>
+            Issuer of the CRL
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CRLIdentifier.IssueTime">
+            <summary>
+            Date of issue of the CRL
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CRLIdentifier.Number">
+            <summary>
+            Optional number of the CRL
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CRLRef">
+            <summary>
+            This class contains information about a Certificate Revocation List (CRL)
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRef.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRef.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRef.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRef.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CRLRef.CertDigest">
+            <summary>
+            The digest of the entire DER encoded
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.CRLRef.CRLIdentifier">
+            <summary>
+            CRLIdentifier is a set of data including the issuer, the time when
+            the CRL was issued and optionally the number of the CRL.
+            The Identifier element can be dropped if the CRL could be inferred
+            from other information.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CRLRefCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRefCollection.Add(Microsoft.Xades.CRLRef)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRefCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CRLRefCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.CRLRefs">
+            <summary>
+            Class that contains a collection of CRL references
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRefs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRefs.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRefs.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CRLRefs.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CRLRefs.CRLRefCollection">
+            <summary>
+            Collection of 
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CRLValue">
+            <summary>
+            This class consist of a sequence of at least one Certificate Revocation
+            List. Each EncapsulatedCRLValue will contain the base64 encoding of a
+            DER-encoded X509 CRL.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLValue.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.CRLValueCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLValueCollection.Add(Microsoft.Xades.CRLValue)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CRLValueCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CRLValueCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.CRLValues">
+            <summary>
+            This class contains a collection of CRL values
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLValues.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.CRLValues.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.CRLValues.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.CRLValues.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.CRLValues.CRLValueCollection">
+            <summary>
+            Collection of CRLValues
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.DataObjectFormat">
+            <summary>
+            The DataObjectFormat element provides information that describes the
+            format of the signed data object. This element must be present when it
+            is mandatory to present the signed data object to human users on
+            verification.
+            This is a signed property that qualifies one specific signed data
+            object. In consequence, a XAdES signature may contain more than one
+            DataObjectFormat elements, each one qualifying one signed data object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DataObjectFormat.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DataObjectFormat.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.DataObjectFormat.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.DataObjectFormat.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.DataObjectFormat.ObjectReferenceAttribute">
+            <summary>
+            The mandatory ObjectReference attribute refers to the Reference element
+            of the signature corresponding with the data object qualified by this
+            property.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.DataObjectFormat.Description">
+            <summary>
+            Textual information related to the signed data object
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.DataObjectFormat.ObjectIdentifier">
+            <summary>
+            An identifier indicating the type of the signed data object
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.DataObjectFormat.MimeType">
+            <summary>
+            An indication of the MIME type of the signed data object
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.DataObjectFormat.Encoding">
+            <summary>
+            An indication of the encoding format of the signed data object
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.DataObjectFormatCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DataObjectFormatCollection.Add(Microsoft.Xades.DataObjectFormat)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.DataObjectFormatCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.DataObjectFormatCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.DigestAlgAndValueType">
+            <summary>
+            This class indicates the algortithm used to calculate the digest and
+            the digest value itself
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DigestAlgAndValueType.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DigestAlgAndValueType.#ctor(System.String)">
+            <summary>
+            Constructor with TagName
+            </summary>
+            <param name="tagName">Name of the tag when serializing with GetXml</param>
+        </member>
+        <member name="M:Microsoft.Xades.DigestAlgAndValueType.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.DigestAlgAndValueType.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.DigestAlgAndValueType.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.DigestAlgAndValueType.TagName">
+            <summary>
+            The name of the element when serializing
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.DigestAlgAndValueType.DigestMethod">
+            <summary>
+            Indicates the digest algorithm
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.DigestAlgAndValueType.DigestValue">
+            <summary>
+            Contains the value of the digest
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.DigestMethod">
+            <summary>
+            DigestMethod indicates the digest algorithm
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DigestMethod.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DigestMethod.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.DigestMethod.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.DigestMethod.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.DigestMethod.Algorithm">
+            <summary>
+            Contains the digest algorithm
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.DocumentationReference">
+            <summary>
+            DocumentationReference points to further explanatory documentation
+            of the object identifier
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReference.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReference.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReference.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReference.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.DocumentationReference.DocumentationReferenceUri">
+            <summary>
+            Pointer to further explanatory documentation of the object identifier
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.DocumentationReferenceCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReferenceCollection.Add(Microsoft.Xades.DocumentationReference)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReferenceCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.DocumentationReferenceCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.DocumentationReferences">
+            <summary>
+            This class contains a collection of DocumentationReferences
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReferences.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReferences.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReferences.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.DocumentationReferences.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.DocumentationReferences.DocumentationReferenceCollection">
+            <summary>
+            Collection of documentation references
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.EncapsulatedX509Certificate">
+            <summary>
+            The EncapsulatedX509Certificate element is able to contain the
+            base64 encoding of a DER-encoded X.509 certificate
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedX509Certificate.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.EncapsulatedX509CertificateCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedX509CertificateCollection.Add(Microsoft.Xades.EncapsulatedX509Certificate)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.EncapsulatedX509CertificateCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.EncapsulatedX509CertificateCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.HashDataInfo">
+            <summary>
+            The HashDataInfo class contains a uri attribute referencing a data object
+            and a ds:Transforms element indicating the transformations to make to this
+            data object.
+            The sequence of HashDataInfo elements will be used to produce the input of
+            the hash computation process whose result will be included in the
+            timestamp request to be sent to the TSA.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.HashDataInfo.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.HashDataInfo.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.HashDataInfo.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.HashDataInfo.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.HashDataInfo.UriAttribute">
+            <summary>
+            Uri referencing a data object
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.HashDataInfo.Transforms">
+            <summary>
+            Transformations to make to this data object
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.HashDataInfoCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.HashDataInfoCollection.Add(Microsoft.Xades.HashDataInfo)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.HashDataInfoCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.HashDataInfoCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.KnownQualifier">
+            <summary>
+            Possible values for Qualifier
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.KnownQualifier.Uninitalized">
+            <summary>
+            Value has not been set
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.KnownQualifier.OIDAsURI">
+            <summary>
+            OID encoded as Uniform Resource Identifier (URI).
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.KnownQualifier.OIDAsURN">
+            <summary>
+            OID encoded as Uniform Resource Name (URN)
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.Identifier">
+            <summary>
+            The Identifier element contains a permanent identifier. Once assigned the
+            identifier can never be re-assigned	again. It supports both the mechanism
+            that is used to identify objects in ASN.1 and the mechanism that is
+            usually used to identify objects in an XML environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Identifier.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Identifier.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.Identifier.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.Identifier.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.Identifier.Qualifier">
+            <summary>
+            The optional Qualifier attribute can be used to provide a hint about the
+            applied encoding (values OIDAsURN or OIDAsURI)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.Identifier.IdentifierUri">
+            <summary>
+            Identification of the XML environment object
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.IndividualDataObjectsTimeStampCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.IndividualDataObjectsTimeStampCollection.Add(Microsoft.Xades.TimeStamp)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.IndividualDataObjectsTimeStampCollection.Add(System.String)">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <param name="tagName">Name of the tag when serializing into XML using GetXml()</param>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.IndividualDataObjectsTimeStampCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.IssuerSerial">
+            <summary>
+            The element IssuerSerial contains the identifier of one of the
+            certificates referenced in the sequence
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.IssuerSerial.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.IssuerSerial.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.IssuerSerial.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.IssuerSerial.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.IssuerSerial.X509IssuerName">
+            <summary>
+            Name of the X509 certificate issuer
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.IssuerSerial.X509SerialNumber">
+            <summary>
+            Serial number of the X509 certificate
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.NoticeNumberCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeNumberCollection.Add(System.Int32)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeNumberCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.NoticeNumberCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.NoticeNumbers">
+            <summary>
+            This class contains identifying numbers for a group of textual statements
+            so that the XAdES based application can get the explicit notices from a
+            notices file
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeNumbers.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeNumbers.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeNumbers.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeNumbers.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.NoticeNumbers.NoticeNumberCollection">
+            <summary>
+            Collection of notice numbers
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.NoticeRef">
+            <summary>
+            The NoticeRef element names an organization and identifies by
+            numbers a group of textual statements prepared by that organization,
+            so that the application could get the explicit notices from a notices file.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeRef.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeRef.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeRef.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.NoticeRef.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.NoticeRef.Organization">
+            <summary>
+            Organization issuing the signature policy
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.NoticeRef.NoticeNumbers">
+            <summary>
+            Numerical identification of textual statements prepared by the organization,
+            so that the application can get the explicit notices from a notices file.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.ObjectIdentifier">
+            <summary>
+            ObjectIdentifier allows the specification of an unique and permanent
+            object of an object and some additional information about the nature of
+            the	data object
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectIdentifier.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectIdentifier.#ctor(System.String)">
+            <summary>
+            Constructor with TagName
+            </summary>
+            <param name="tagName">Name of the tag when serializing with GetXml</param>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectIdentifier.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectIdentifier.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectIdentifier.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.ObjectIdentifier.TagName">
+            <summary>
+            The name of the element when serializing
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.ObjectIdentifier.Identifier">
+            <summary>
+            Specification of an unique and permanent identifier
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.ObjectIdentifier.Description">
+            <summary>
+            Textual description of the nature of the data object
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.ObjectIdentifier.DocumentationReferences">
+            <summary>
+            References to documents where additional information about the
+            nature of the data object can be found
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.ObjectReference">
+            <summary>
+            This class refers to one ds:Reference element of the ds:SignedInfo
+            corresponding with one data object qualified by this property.
+            If some but not all the signed data objects share the same commitment,
+            one ObjectReference element must appear for each one of them.
+            However, if all the signed data objects share the same commitment,
+            the AllSignedDataObjects empty element must be present.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectReference.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectReference.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectReference.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectReference.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.ObjectReference.ObjectReferenceUri">
+            <summary>
+            Uri of the object reference
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.ObjectReferenceCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectReferenceCollection.Add(Microsoft.Xades.ObjectReference)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.ObjectReferenceCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.ObjectReferenceCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.OCSPIdentifier">
+            <summary>
+            This class includes the name of the server that has produced the
+            referenced response (ResponderID element) and the time indication in
+            the "ProducedAt" field of the referenced response (ProducedAt element).
+            The optional URI attribute could serve to indicate where the OCSP
+            response identified is archived.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPIdentifier.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPIdentifier.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPIdentifier.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPIdentifier.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPIdentifier.UriAttribute">
+            <summary>
+            The optional URI attribute could serve to indicate where the OCSP
+            response is archived
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPIdentifier.ResponderID">
+            <summary>
+            The ID of the server that has produced the referenced response
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPIdentifier.ProducedAt">
+            <summary>
+            Time indication in the referenced response
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OCSPRef">
+            <summary>
+            This class identifies one OCSP response
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRef.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRef.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRef.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRef.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPRef.OCSPIdentifier">
+            <summary>
+            Identification of one OCSP response
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPRef.CertDigest">
+            <summary>
+            The digest computed on the DER encoded OCSP response, since it may be
+            needed to differentiate between two OCSP responses by the same server
+            with their "ProducedAt" fields within the same second.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OCSPRefCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRefCollection.Add(Microsoft.Xades.OCSPRef)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRefCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPRefCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.OCSPRefs">
+            <summary>
+            This class contains a collection of OCSPRefs
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRefs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRefs.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRefs.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPRefs.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPRefs.OCSPRefCollection">
+            <summary>
+            Collection of OCSP refs
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OCSPValue">
+            <summary>
+            This class consist of a sequence of at least one OCSP Response. The
+            EncapsulatedOCSPValue element contains the base64 encoding of a
+            DER-encoded OCSP Response
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPValue.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OCSPValueCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPValueCollection.Add(Microsoft.Xades.OCSPValue)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPValueCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPValueCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.OCSPValues">
+            <summary>
+            This class contains a collection of OCSPValues
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPValues.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPValues.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPValues.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OCSPValues.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OCSPValues.OCSPValueCollection">
+            <summary>
+            Collection of OCSP values
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OtherCertificate">
+            <summary>
+            The OtherCertificate element is a placeholder for potential future
+            new formats of certificates
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherCertificate.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherCertificate.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherCertificate.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OtherCertificate.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherCertificate.AnyXmlElement">
+            <summary>
+            The generic XML element that represents any certificate
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OtherCertificateCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherCertificateCollection.Add(Microsoft.Xades.OtherCertificate)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherCertificateCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherCertificateCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.OtherRef">
+            <summary>
+            Alternative forms of validation data can be included in this class
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRef.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRef.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRef.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRef.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherRef.AnyXmlElement">
+            <summary>
+            The generic XML element that represents any other type of ref
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OtherRefCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRefCollection.Add(Microsoft.Xades.OtherRef)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRefCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherRefCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.OtherRefs">
+            <summary>
+            This class contains a collection of OtherRefs
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRefs.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRefs.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRefs.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OtherRefs.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherRefs.OtherRefCollection">
+            <summary>
+            Collection of other refs
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OtherValue">
+            <summary>
+            This class provides a placeholder for other revocation information
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValue.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValue.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValue.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValue.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherValue.AnyXmlElement">
+            <summary>
+            The generic XML element that represents any other value
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.OtherValueCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValueCollection.Add(Microsoft.Xades.OtherValue)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValueCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherValueCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.OtherValues">
+            <summary>
+            This class contains a collection of OtherValues
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValues.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValues.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValues.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.OtherValues.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.OtherValues.OtherValueCollection">
+            <summary>
+            Collection of other values
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.QualifyingProperties">
+            <summary>
+            The QualifyingProperties element acts as a container element for
+            all the qualifying information that should be added to an XML
+            signature
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.QualifyingProperties.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.QualifyingProperties.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.QualifyingProperties.LoadXml(System.Xml.XmlElement,System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+            <param name="counterSignedXmlElement">Element containing parent signature (needed if there are counter signatures)</param>
+        </member>
+        <member name="M:Microsoft.Xades.QualifyingProperties.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.QualifyingProperties.Id">
+            <summary>
+            The optional Id attribute can be used to make a reference to the
+            QualifyingProperties container.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.QualifyingProperties.Target">
+            <summary>
+            The mandatory Target attribute refers to the XML signature with which the
+            qualifying properties are associated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.QualifyingProperties.SignedProperties">
+            <summary>
+            The SignedProperties element contains a number of properties that are
+            collectively signed by the XMLDSIG signature
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.QualifyingProperties.UnsignedProperties">
+            <summary>
+            The UnsignedProperties element contains a number of properties that are
+            not signed by the XMLDSIG signature
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.RevocationValues">
+            <summary>
+            The RevocationValues element is used to hold the values of the
+            revocation information which are to be shipped with the XML signature
+            in case of an XML Advanced Electronic Signature with Extended
+            Validation Data (XAdES-X-Long). This is a unsigned property that
+            qualifies the signature. An XML electronic signature aligned with the
+            present document MAY contain at most one RevocationValues element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.RevocationValues.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.RevocationValues.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.RevocationValues.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.RevocationValues.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.RevocationValues.Id">
+            <summary>
+            Optional Id for the XML element
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.RevocationValues.CRLValues">
+            <summary>
+            Certificate Revocation Lists
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.RevocationValues.OCSPValues">
+            <summary>
+            Responses from an online certificate status server
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.RevocationValues.OtherValues">
+            <summary>
+            Placeholder for other revocation information is provided for future
+            use
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SignaturePolicyId">
+            <summary>
+            The SignaturePolicyId element is an explicit and unambiguous identifier
+            of a Signature Policy together with a hash value of the signature
+            policy, so it can be verified that the policy selected by the signer is
+            the one being used by the verifier. An explicit signature policy has a
+            globally unique reference, which, in this way, is bound to an
+            electronic signature by the signer as part of the signature
+            calculation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyId.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyId.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyId.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyId.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignaturePolicyId.SigPolicyId">
+            <summary>
+            The SigPolicyId element contains an identifier that uniquely
+            identifies a specific version of the signature policy
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignaturePolicyId.Transforms">
+            <summary>
+            The optional Transforms element can contain the transformations
+            performed on the signature policy document before computing its
+            hash
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignaturePolicyId.SigPolicyHash">
+            <summary>
+            The SigPolicyHash element contains the identifier of the hash
+            algorithm and the hash value of the signature policy
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignaturePolicyId.SigPolicyQualifiers">
+            <summary>
+            The SigPolicyQualifier element can contain additional information
+            qualifying the signature policy identifier
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SignaturePolicyIdentifier">
+            <summary>
+            This class contains an identifier of a signature policy
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyIdentifier.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyIdentifier.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyIdentifier.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SignaturePolicyIdentifier.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignaturePolicyIdentifier.SignaturePolicyId">
+            <summary>
+            The SignaturePolicyId element is an explicit and unambiguous identifier
+            of a Signature Policy together with a hash value of the signature
+            policy, so it can be verified that the policy selected by the signer is
+            the one being used by the verifier. An explicit signature policy has a
+            globally unique reference, which, in this way, is bound to an
+            electronic signature by the signer as part of the signature
+            calculation.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignaturePolicyIdentifier.SignaturePolicyImplied">
+            <summary>
+            The empty SignaturePolicyImplied element will appear when the
+            data object(s) being signed and other external data imply the
+            signature policy
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SignatureProductionPlace">
+            <summary>
+            In some transactions the purported place where the signer was at the time
+            of signature creation may need to be indicated. In order to provide this
+            information a new property may be included in the signature.
+            This property specifies an address associated with the signer at a
+            particular geographical (e.g. city) location.
+            This is a signed property that qualifies the signer.
+            An XML electronic signature aligned with the present document MAY contain
+            at most one SignatureProductionPlace element.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignatureProductionPlace.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignatureProductionPlace.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignatureProductionPlace.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SignatureProductionPlace.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignatureProductionPlace.City">
+            <summary>
+            City where signature was produced
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignatureProductionPlace.StateOrProvince">
+            <summary>
+            State or province where signature was produced
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignatureProductionPlace.PostalCode">
+            <summary>
+            Postal code of place where signature was produced
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignatureProductionPlace.CountryName">
+            <summary>
+            Country where signature was produced
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SignatureTimeStampCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignatureTimeStampCollection.Add(Microsoft.Xades.TimeStamp)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignatureTimeStampCollection.Add(System.String)">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <param name="tagName">Name of the tag when serializing into XML using GetXml()</param>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignatureTimeStampCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.SignedDataObjectProperties">
+            <summary>
+            The SignedDataObjectProperties element contains properties that qualify
+            some of the signed data objects
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignedDataObjectProperties.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignedDataObjectProperties.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignedDataObjectProperties.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SignedDataObjectProperties.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignedDataObjectProperties.DataObjectFormatCollection">
+            <summary>
+            Collection of signed data object formats
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedDataObjectProperties.CommitmentTypeIndicationCollection">
+            <summary>
+            Collection of commitment type indications
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedDataObjectProperties.AllDataObjectsTimeStampCollection">
+            <summary>
+            Collection of all data object timestamps
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedDataObjectProperties.IndividualDataObjectsTimeStampCollection">
+            <summary>
+            Collection of individual data object timestamps
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SignedProperties">
+            <summary>
+            The SignedProperties element contains a number of properties that are
+            collectively signed by the XMLDSIG signature
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.SignedProperties.DefaultSignedPropertiesId">
+            <summary>
+            Default value for the SignedProperties Id attribute
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignedProperties.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignedProperties.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignedProperties.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SignedProperties.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignedProperties.Id">
+            <summary>
+            This Id is used to be able to point the signature reference to this
+            element.  It is initialized by default.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedProperties.SignedSignatureProperties">
+            <summary>
+            The properties that qualify the signature itself or the signer are
+            included as content of the SignedSignatureProperties element
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedProperties.SignedDataObjectProperties">
+            <summary>
+            The SignedDataObjectProperties element contains properties that qualify
+            some of the signed data objects
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SignedSignatureProperties">
+            <summary>
+            The properties that qualify the signature itself or the signer are
+            included as content of the SignedSignatureProperties element
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignedSignatureProperties.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignedSignatureProperties.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignedSignatureProperties.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SignedSignatureProperties.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignedSignatureProperties.SigningTime">
+            <summary>
+            The signing time property specifies the time at which the signer
+            performed the signing process. This is a signed property that
+            qualifies the whole signature. An XML electronic signature aligned
+            with the present document MUST contain exactly one SigningTime element .
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedSignatureProperties.SigningCertificate">
+            <summary>
+            The SigningCertificate property is designed to prevent the simple
+            substitution of the certificate. This property contains references
+            to certificates and digest values computed on them. The certificate
+            used to verify the signature shall be identified in the sequence;
+            the signature policy may mandate other certificates be present,
+            that may include all the certificates up to the point of trust.
+            This is a signed property that qualifies the signature. An XML
+            electronic signature aligned with the present document MUST contain
+            exactly one SigningCertificate.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedSignatureProperties.SignaturePolicyIdentifier">
+            <summary>
+            The signature policy is a set of rules for the creation and
+            validation of an electronic signature, under which the signature
+            can be determined to be valid. A given legal/contractual context
+            may recognize a particular signature policy as meeting its
+            requirements.
+            An XML electronic signature aligned with the present document MUST
+            contain exactly one SignaturePolicyIdentifier element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedSignatureProperties.SignatureProductionPlace">
+            <summary>
+            In some transactions the purported place where the signer was at the time
+            of signature creation may need to be indicated. In order to provide this
+            information a new property may be included in the signature.
+            This property specifies an address associated with the signer at a
+            particular geographical (e.g. city) location.
+            This is a signed property that qualifies the signer.
+            An XML electronic signature aligned with the present document MAY contain
+            at most one SignatureProductionPlace element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignedSignatureProperties.SignerRole">
+            <summary>
+            According to what has been stated in the Introduction clause, an
+            electronic signature produced in accordance with the present document
+            incorporates: "a commitment that has been explicitly endorsed under a
+            signature policy, at a given time, by a signer under an identifier,
+            e.g. a name or a pseudonym, and optionally a role".
+            While the name of the signer is important, the position of the signer
+            within a company or an organization can be even more important. Some
+            contracts may only be valid if signed by a user in a particular role,
+            e.g. a Sales Director. In many cases who the sales Director really is,
+            is not that important but being sure that the signer is empowered by his
+            company to be the Sales Director is fundamental.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SignerRole">
+            <summary>
+            According to what has been stated in the Introduction clause, an
+            electronic signature produced in accordance with the present document
+            incorporates: "a commitment that has been explicitly endorsed under a
+            signature policy, at a given time, by a signer under an identifier,
+            e.g. a name or a pseudonym, and optionally a role".
+            While the name of the signer is important, the position of the signer
+            within a company or an organization can be even more important. Some
+            contracts may only be valid if signed by a user in a particular role,
+            e.g. a Sales Director. In many cases who the sales Director really is,
+            is not that important but being sure that the signer is empowered by his
+            company to be the Sales Director is fundamental.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignerRole.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SignerRole.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SignerRole.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SignerRole.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SignerRole.ClaimedRoles">
+            <summary>
+            The ClaimedRoles element contains a sequence of roles claimed by
+            the signer but not certified. Additional contents types may be
+            defined on a domain application basis and be part of this element.
+            The namespaces given to the corresponding XML schemas will allow
+            their unambiguous identification in the case these roles use XML.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SignerRole.CertifiedRoles">
+            <summary>
+            The CertifiedRoles element contains one or more wrapped attribute
+            certificates for the signer
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SigningCertificate">
+            <summary>
+            This class has as purpose to provide the simple substitution of the
+            certificate. It contains references to certificates and digest values
+            computed on them
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SigningCertificate.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SigningCertificate.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SigningCertificate.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SigningCertificate.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SigningCertificate.CertCollection">
+            <summary>
+            A collection of certs
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SigPolicyQualifier">
+            <summary>
+            This class can contain additional information qualifying the signature
+            policy identifier
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifier.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifier.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifier.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifier.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SigPolicyQualifier.AnyXmlElement">
+            <summary>
+            The generic XML element that represents a sig policy qualifier
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SigPolicyQualifierCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifierCollection.Add(Microsoft.Xades.SigPolicyQualifier)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifierCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SigPolicyQualifierCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.SigPolicyQualifiers">
+            <summary>
+            This class contains a collection of SigPolicyQualifiers
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifiers.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifiers.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifiers.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SigPolicyQualifiers.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SigPolicyQualifiers.SigPolicyQualifierCollection">
+            <summary>
+            A collection of sig policy qualifiers
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SPUri">
+            <summary>
+            SPUri represents the URL where the copy of the Signature Policy may be
+            obtained.  The class derives from SigPolicyQualifier.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SPUri.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SPUri.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SPUri.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SPUri.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SPUri.Uri">
+            <summary>
+            Uri for the sig policy qualifier
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SPUri.AnyXmlElement">
+            <summary>
+            Inherited generic element, not used in the SPUri class
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.SPUserNotice">
+            <summary>
+            SPUserNotice element is intended for being displayed whenever the
+            signature is validated.  The class derives from SigPolicyQualifier.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SPUserNotice.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.SPUserNotice.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.SPUserNotice.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.SPUserNotice.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.SPUserNotice.NoticeRef">
+            <summary>
+            The NoticeRef element names an organization and identifies by
+            numbers a group of textual statements prepared by that organization,
+            so that the application could get the explicit notices from a notices file.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SPUserNotice.ExplicitText">
+            <summary>
+            The	ExplicitText element contains the text of the notice to be displayed
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.SPUserNotice.AnyXmlElement">
+            <summary>
+            Inherited generic element, not used in the SPUserNotice class
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.TimeStamp">
+            <summary>
+            This class contains timestamp information
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.TimeStamp.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.TimeStamp.#ctor(System.String)">
+            <summary>
+            Constructor with TagName
+            </summary>
+            <param name="tagName">Name of the tag when serializing with GetXml</param>
+        </member>
+        <member name="M:Microsoft.Xades.TimeStamp.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.TimeStamp.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.TimeStamp.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.TimeStamp.TagName">
+            <summary>
+            The name of the element when serializing
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.TimeStamp.CanonicalizationMethod">
+            <summary>
+            The CanonicalizationMethod
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.TimeStamp.HashDataInfoCollection">
+            <summary>
+            A collection of hash data infos
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.TimeStamp.EncapsulatedTimeStamp">
+            <summary>
+            The time-stamp generated by a TSA encoded as an ASN.1 data
+            object
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.TimeStamp.XMLTimeStamp">
+            <summary>
+            The time-stamp generated by a TSA encoded as a generic XML
+            timestamp
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.Transform">
+            <summary>
+            The Transform element contains a single transformation
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Transform.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Transform.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.Transform.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.Transform.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.Transform.Algorithm">
+            <summary>
+            Algorithm of the transformation
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.Transform.XPath">
+            <summary>
+            XPath of the transformation
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.TransformCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.TransformCollection.Add(Microsoft.Xades.Transform)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.TransformCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.TransformCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.Transforms">
+            <summary>
+            The Transforms element contains a collection of transformations
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Transforms.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.Transforms.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.Transforms.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.Transforms.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.Transforms.TransformCollection">
+            <summary>
+            A collection of transforms
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.UnsignedDataObjectProperties">
+            <summary>
+            The UnsignedDataObjectProperties element may contain properties that
+            qualify some of the signed data objects.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperties.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperties.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperties.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperties.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedDataObjectProperties.UnsignedDataObjectPropertyCollection">
+            <summary>
+            A collection of unsigned data object properties
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.UnsignedDataObjectProperty">
+            <summary>
+            This class contains properties that qualify some of the signed data
+            objects. The signature generated by the signer does not cover the content
+            of this element.
+            This information is added for the shake of completeness and to cope with
+            potential future needs for inclusion of such kind of properties.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperty.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperty.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperty.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectProperty.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedDataObjectProperty.AnyXmlElement">
+            <summary>
+            The generic XML element that represents an unsigned data object
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.UnsignedDataObjectPropertyCollection">
+            <summary>
+            Collection class that derives from ArrayList.  It provides the minimally
+            required functionality to add instances of typed classes and obtain typed
+            elements through a custom indexer.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectPropertyCollection.Add(Microsoft.Xades.UnsignedDataObjectProperty)">
+            <summary>
+            Add typed object to the collection
+            </summary>
+            <param name="objectToAdd">Typed object to be added to collection</param>
+            <returns>The object that has been added to collection</returns>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedDataObjectPropertyCollection.Add">
+            <summary>
+            Add new typed object to the collection
+            </summary>
+            <returns>The newly created object that has been added to collection</returns>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedDataObjectPropertyCollection.Item(System.Int32)">
+            <summary>
+            New typed indexer for the collection
+            </summary>
+            <param name="index">Index of the object to retrieve from collection</param>
+        </member>
+        <member name="T:Microsoft.Xades.UnsignedProperties">
+            <summary>
+            The UnsignedProperties element contains a number of properties that are
+            not signed by the XMLDSIG signature
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedProperties.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedProperties.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedProperties.LoadXml(System.Xml.XmlElement,System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+            <param name="counterSignedXmlElement">Element containing parent signature (needed if there are counter signatures)</param>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedProperties.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedProperties.Id">
+            <summary>
+            The optional Id attribute can be used to make a reference to the
+            UnsignedProperties element
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedProperties.UnsignedSignatureProperties">
+            <summary>
+            UnsignedSignatureProperties may contain properties that qualify XML
+            signature itself or the signer
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedProperties.UnsignedDataObjectProperties">
+            <summary>
+            The UnsignedDataObjectProperties element may contain properties that
+            qualify some of the signed data objects
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.UnsignedSignatureProperties">
+            <summary>
+            UnsignedSignatureProperties may contain properties that qualify XML
+            signature itself or the signer
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedSignatureProperties.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedSignatureProperties.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedSignatureProperties.LoadXml(System.Xml.XmlElement,System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+            <param name="counterSignedXmlElement">Element containing parent signature (needed if there are counter signatures)</param>
+        </member>
+        <member name="M:Microsoft.Xades.UnsignedSignatureProperties.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.CounterSignatureCollection">
+            <summary>
+            A collection of counter signatures
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.SignatureTimeStampCollection">
+            <summary>
+            A collection of signature timestamps
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.CompleteCertificateRefs">
+            <summary>
+            This clause defines the XML element containing the sequence of
+            references to the full set of CA certificates that have been used
+            to validate the electronic signature up to (but not including) the
+            signer's certificate. This is an unsigned property that qualifies
+            the signature.
+            An XML electronic signature aligned with the present document MAY
+            contain at most one CompleteCertificateRefs element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.CompleteRevocationRefs">
+            <summary>
+            This clause defines the XML element containing a full set of
+            references to the revocation data that have been used in the
+            validation of the signer and CA certificates.
+            This is an unsigned property that qualifies the signature.
+            The XML electronic signature aligned with the present document
+            MAY contain at most one CompleteRevocationRefs element.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.RefsOnlyTimeStampFlag">
+            <summary>
+            Flag indicating if the RefsOnlyTimeStamp element (or several) is
+            present (RefsOnlyTimeStampFlag = true).  If one or more
+            sigAndRefsTimeStamps are present, RefsOnlyTimeStampFlag will be false.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.SigAndRefsTimeStampCollection">
+            <summary>
+            A collection of sig and refs timestamps
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.RefsOnlyTimeStampCollection">
+            <summary>
+            A collection of refs only timestamps
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.CertificateValues">
+            <summary>
+            Certificate values
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.RevocationValues">
+            <summary>
+            Revocation values
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.UnsignedSignatureProperties.ArchiveTimeStampCollection">
+            <summary>
+            A collection of signature timestamp
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.XadesObject">
+            <summary>
+            This class represents the unique object of a XAdES signature that
+            contains all XAdES information
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XadesObject.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XadesObject.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesObject.LoadXml(System.Xml.XmlElement,System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+            <param name="counterSignedXmlElement">Element containing parent signature (needed if there are counter signatures)</param>
+        </member>
+        <member name="M:Microsoft.Xades.XadesObject.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.XadesObject.Id">
+            <summary>
+            Id attribute of the XAdES object
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.XadesObject.QualifyingProperties">
+            <summary>
+            The QualifyingProperties element acts as a container element for
+            all the qualifying information that should be added to an XML
+            signature.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.KnownSignatureStandard">
+            <summary>
+            Types of signature standards that can be contained in XadesSignedXml class instance
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.KnownSignatureStandard.XmlDsig">
+            <summary>
+            XML Digital Signature (XMLDSIG)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.KnownSignatureStandard.Xades">
+            <summary>
+            XML Advanced Electronic Signature (XAdES) 
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.XadesCheckSignatureMasks">
+            <summary>
+            Bitmasks to indicate which checks need to be executed on the XAdES signature
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckXmldsigSignature">
+            <summary>
+            Check the signature of the underlying XMLDSIG signature
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.ValidateAgainstSchema">
+            <summary>
+            Validate the XML representation of the signature against the XAdES and XMLDSIG schemas
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckSameCertificate">
+            <summary>
+            Check to see if first XMLDSIG certificate has same hashvalue as first XAdES SignatureCertificate
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckAllReferencesExistInAllDataObjectsTimeStamp">
+            <summary>
+            Check if there is a HashDataInfo for each reference if there is a AllDataObjectsTimeStamp
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckAllHashDataInfosInIndividualDataObjectsTimeStamp">
+            <summary>
+            Check if the HashDataInfo of each IndividualDataObjectsTimeStamp points to existing Reference
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckCounterSignatures">
+            <summary>
+            Perform XAdES checks on contained counter signatures 
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckCounterSignaturesReference">
+            <summary>
+            Counter signatures should all contain a reference to the parent signature SignatureValue element
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckObjectReferencesInCommitmentTypeIndication">
+            <summary>
+            Check if each ObjectReference in CommitmentTypeIndication points to Reference element
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckIfClaimedRolesOrCertifiedRolesPresentInSignerRole">
+            <summary>
+            Check if at least ClaimedRoles or CertifiedRoles present in SignerRole
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckHashDataInfoOfSignatureTimeStampPointsToSignatureValue">
+            <summary>
+            Check if HashDataInfo of SignatureTimeStamp points to SignatureValue
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckQualifyingPropertiesTarget">
+            <summary>
+            Check if the QualifyingProperties Target attribute points to the signature element
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckQualifyingProperties">
+            <summary>
+            Check that QualifyingProperties occur in one Object, check that there is only one QualifyingProperties and that signed properties occur in one QualifyingProperties element
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckSigAndRefsTimeStampHashDataInfos">
+            <summary>
+            Check if all required HashDataInfos are present on SigAndRefsTimeStamp
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckRefsOnlyTimeStampHashDataInfos">
+            <summary>
+            Check if all required HashDataInfos are present on RefsOnlyTimeStamp
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckArchiveTimeStampHashDataInfos">
+            <summary>
+            Check if all required HashDataInfos are present on ArchiveTimeStamp
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckXadesCIsXadesT">
+            <summary>
+            Check if a XAdES-C signature is also a XAdES-T signature
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckXadesXLIsXadesX">
+            <summary>
+            Check if a XAdES-XL signature is also a XAdES-X signature
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckCertificateValuesMatchCertificateRefs">
+            <summary>
+            Check if CertificateValues match CertificateRefs
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.CheckRevocationValuesMatchRevocationRefs">
+            <summary>
+            Check if RevocationValues match RevocationRefs
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesCheckSignatureMasks.AllChecks">
+            <summary>
+            Do all known tests on XAdES signature
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.XadesSignedXml">
+            <summary>
+            Facade class for the XAdES signature library.  The class inherits from
+            the System.Security.Cryptography.Xml.SignedXml class and is backwards
+            compatible with it, so this class can host xmldsig signatures and XAdES
+            signatures.  The property SignatureStandard will indicate the type of the
+            signature: XMLDSIG or XAdES.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesSignedXml.XadesNamespaceUri">
+            <summary>
+            The XAdES XML namespace URI
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xades.XadesSignedXml.SignedPropertiesType">
+            <summary>
+            Mandated type name for the Uri reference to the SignedProperties element
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.#ctor">
+            <summary>
+            Default constructor for the XadesSignedXml class
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.#ctor(System.Xml.XmlElement)">
+            <summary>
+            Constructor for the XadesSignedXml class
+            </summary>
+            <param name="signatureElement">XmlElement used to create the instance</param>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.#ctor(System.Xml.XmlDocument)">
+            <summary>
+            Constructor for the XadesSignedXml class
+            </summary>
+            <param name="signatureDocument">XmlDocument used to create the instance</param>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">The XML element from which to load the XadesSignedXml state</param>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.GetIdElement(System.Xml.XmlDocument,System.String)">
+            <summary>
+            Overridden virtual method to be able to find the nested SignedProperties
+            element inside of the XAdES object
+            </summary>
+            <param name="xmlDocument">Document in which to find the Id</param>
+            <param name="idValue">Value of the Id to look for</param>
+            <returns>XmlElement with requested Id</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.AddXadesObject(Microsoft.Xades.XadesObject)">
+            <summary>
+            Add a XAdES object to the signature
+            </summary>
+            <param name="xadesObject">XAdES object to add to signature</param>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.XadesCheckSignature(Microsoft.Xades.XadesCheckSignatureMasks)">
+            <summary>
+            Additional tests for XAdES signatures.  These tests focus on
+            XMLDSIG verification and correct form of the XAdES XML structure
+            (schema validation and completeness as defined by the XAdES standard).
+            </summary>
+            <remarks>
+            Because of the fact that the XAdES library is intentionally
+            independent of standards like TSP (RFC3161) or OCSP (RFC2560),
+            these tests do NOT include any verification of timestamps nor OCSP
+            responses.
+            These checks are important and have to be done in the application
+            built on top of the XAdES library.
+            </remarks>
+            <exception cref="T:System.Exception">Thrown when the signature is not
+            a XAdES signature.  SignatureStandard should be equal to
+            <see cref="F:Microsoft.Xades.KnownSignatureStandard.Xades">KnownSignatureStandard.Xades</see>.
+            Use the CheckSignature method for non-XAdES signatures.</exception>
+            <param name="xadesCheckSignatureMasks">Bitmask to indicate which
+            tests need to be done.  This function will call a public virtual
+            methods for each bit that has been set in this mask.
+            See the <see cref="T:Microsoft.Xades.XadesCheckSignatureMasks">XadesCheckSignatureMasks</see>
+            enum for the bitmask definitions.  The virtual test method associated
+            with a bit in the mask has the same name as enum value name.</param>
+            <returns>If the function returns true the check was OK.  If the
+            check fails an exception with a explanatory message is thrown.</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckXmldsigSignature">
+            <summary>
+            Check the signature of the underlying XMLDSIG signature
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.ValidateAgainstSchema">
+            <summary>
+            Validate the XML representation of the signature against the XAdES and XMLDSIG schemas
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckSameCertificate">
+            <summary>
+            Check to see if first XMLDSIG certificate has same hashvalue as first XAdES SignatureCertificate
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckAllReferencesExistInAllDataObjectsTimeStamp">
+            <summary>
+            Check if there is a HashDataInfo for each reference if there is a AllDataObjectsTimeStamp
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckAllHashDataInfosInIndividualDataObjectsTimeStamp">
+            <summary>
+            Check if the HashDataInfo of each IndividualDataObjectsTimeStamp points to existing Reference
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckCounterSignatures(Microsoft.Xades.XadesCheckSignatureMasks)">
+            <summary>
+            Perform XAdES checks on contained counter signatures.  If couter signature is XMLDSIG, only XMLDSIG check (CheckSignature()) is done.
+            </summary>
+            <param name="counterSignatureMask">Check mask applied to counter signatures</param>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckCounterSignaturesReference">
+            <summary>
+            Counter signatures should all contain a reference to the parent signature SignatureValue element
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckObjectReferencesInCommitmentTypeIndication">
+            <summary>
+            Check if each ObjectReference in CommitmentTypeIndication points to Reference element
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckIfClaimedRolesOrCertifiedRolesPresentInSignerRole">
+            <summary>
+            Check if at least ClaimedRoles or CertifiedRoles present in SignerRole
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckHashDataInfoOfSignatureTimeStampPointsToSignatureValue">
+            <summary>
+            Check if HashDataInfo of SignatureTimeStamp points to SignatureValue
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckQualifyingPropertiesTarget">
+            <summary>
+            Check if the QualifyingProperties Target attribute points to the signature element
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckQualifyingProperties">
+            <summary>
+            Check that QualifyingProperties occur in one Object, check that there is only one QualifyingProperties and that signed properties occur in one QualifyingProperties element
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckSigAndRefsTimeStampHashDataInfos">
+            <summary>
+            Check if all required HashDataInfos are present on SigAndRefsTimeStamp
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckRefsOnlyTimeStampHashDataInfos">
+            <summary>
+            Check if all required HashDataInfos are present on RefsOnlyTimeStamp
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckArchiveTimeStampHashDataInfos">
+            <summary>
+            Check if all required HashDataInfos are present on ArchiveTimeStamp
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckXadesCIsXadesT">
+            <summary>
+            Check if a XAdES-C signature is also a XAdES-T signature
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckXadesXLIsXadesX">
+            <summary>
+            Check if a XAdES-XL signature is also a XAdES-X signature
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckCertificateValuesMatchCertificateRefs">
+            <summary>
+            Check if CertificateValues match CertificateRefs
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.CheckRevocationValuesMatchRevocationRefs">
+            <summary>
+            Check if RevocationValues match RevocationRefs
+            </summary>
+            <returns>If the function returns true the check was OK</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.ComputeSignature">
+            <summary>
+            Copy of System.Security.Cryptography.Xml.SignedXml.ComputeSignature() which will end up calling
+            our own GetC14NDigest with a namespace prefix for all XmlDsig nodes
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.PreComputeSignature">
+            <summary>
+            Creates the C14N digest bytes in order to be signed.
+            </summary>
+            <returns>C14N digest</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.ComputeExternalSignature(System.Byte[])">
+            <summary>
+            Adds the external generated signature.
+            </summary>
+            <param name="signatureValue"></param>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.BuildDigestedReferences">
+            <summary>
+            Copy of System.Security.Cryptography.Xml.SignedXml.BuildDigestedReferences() which will add a "ds" 
+            namespace prefix to all XmlDsig nodes
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.GetC14NDigest(System.Security.Cryptography.HashAlgorithm)">
+            <summary>
+            We won't call System.Security.Cryptography.Xml.SignedXml.GetC14NDigest(), as we want to use our own.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XadesSignedXml.GetC14NDigest(System.Security.Cryptography.HashAlgorithm,System.String)">
+            <summary>
+            Copy of System.Security.Cryptography.Xml.SignedXml.GetC14NDigest() which will add a
+            namespace prefix to all XmlDsig nodes
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.XadesSignedXml.SignatureStandard">
+            <summary>
+            Property indicating the type of signature (XmlDsig or XAdES)
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.XadesSignedXml.XadesObject">
+            <summary>
+            Read-only property containing XAdES information
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.XadesSignedXml.SignatureValueId">
+            <summary>
+            Setting this property will add an ID attribute to the SignatureValue element.
+            This is required when constructing a XAdES-T signature.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Xades.XadesSignedXml.UnsignedProperties">
+            <summary>
+            This property allows to access and modify the unsigned properties
+            after the XAdES object has been added to the signature.
+            Because the unsigned properties are part of a location in the
+            signature that is not used when computing the signature, it is save
+            to modify them even after the XMLDSIG signature has been computed.
+            This is needed when XAdES objects that depend on the XMLDSIG
+            signature value need to be added to the signature. The
+            SignatureTimeStamp element is such a property, it can only be
+            created when the XMLDSIG signature has been computed.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Xades.XMLTimeStamp">
+            <summary>
+            This class contains a timestamp encoded as XML
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XMLTimeStamp.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Xades.XMLTimeStamp.HasChanged">
+            <summary>
+            Check to see if something has changed in this instance and needs to be serialized
+            </summary>
+            <returns>Flag indicating if a member needs serialization</returns>
+        </member>
+        <member name="M:Microsoft.Xades.XMLTimeStamp.LoadXml(System.Xml.XmlElement)">
+            <summary>
+            Load state from an XML element
+            </summary>
+            <param name="xmlElement">XML element containing new state</param>
+        </member>
+        <member name="M:Microsoft.Xades.XMLTimeStamp.GetXml">
+            <summary>
+            Returns the XML representation of the this object
+            </summary>
+            <returns>XML element containing the state of this object</returns>
+        </member>
+        <member name="P:Microsoft.Xades.XMLTimeStamp.AnyXmlElement">
+            <summary>
+            The generic XML element that represents an XML timestamp
+            </summary>
+        </member>
+    </members>
+</doc>
