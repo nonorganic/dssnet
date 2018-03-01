@@ -41,8 +41,11 @@ namespace iTextSharp.text.pdf.security {
 
         public virtual byte[] Sign(byte[] message) {
             if (certificate.PrivateKey is RSACryptoServiceProvider) {
-                RSACryptoServiceProvider rsa = (RSACryptoServiceProvider)certificate.PrivateKey;
-                //TODO jbonilla-No siempre funciona con SHA-256
+                // Force rsa all PrivateKey properties 
+                //Including  Private Parameters  
+                //Instead of cast  that does not always work
+                RSACryptoServiceProvider rsa = new   RSACryptoServiceProvider() ;
+                rsa.FromXmlString(certificate.PrivateKey.ToXmlString(true)) ;      
                 return rsa.SignData(message, hashAlgorithm);
             }
             else {
